@@ -1,8 +1,9 @@
 %% zIE_06_sim_ET_hatw.m —— 事件触发仿真（含 hat{w} 项）
 clear; clc;
-load zIE_sys.mat
-load zIE_stage0.mat
-load zIE_stageB.mat
+script_dir = fileparts(mfilename('fullpath'));
+load(fullfile(script_dir, 'zIE_sys.mat'))
+load(fullfile(script_dir, 'zIE_stage0.mat'))
+load(fullfile(script_dir, 'zIE_stageB.mat'))
 
 rng(2);
 T = 5; dt = 1e-3; Nstep = round(T / dt);
@@ -87,5 +88,5 @@ events = 1; ev_k = zeros(Nstep, 1); ev_k(1) = 1;
         figure; plot(Tlog, Whatlog); grid on; xlabel('t [s]'); ylabel('\hat{w}'); title('w-hat');
 
         % 只存数值
-        save zIE_sim_hatw.mat T dt sigma_sim delta_sim Xlog Ulog Rlog ev_k dti Whatlog -v7
+        save(fullfile(script_dir, 'zIE_sim_hatw.mat'), 'T', 'dt', 'sigma_sim', 'delta_sim', 'Xlog', 'Ulog', 'Rlog', 'ev_k', 'dti', 'Whatlog', '-v7')
         disp('zIE_sim_hatw.mat 已生成');

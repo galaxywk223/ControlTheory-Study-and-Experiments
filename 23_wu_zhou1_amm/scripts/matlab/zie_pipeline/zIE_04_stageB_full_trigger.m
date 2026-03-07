@@ -1,8 +1,9 @@
 %% zIE_04_stageB_full_trigger.m —— 固定 K,L1，对称满矩阵触发权 Gx,Gh
 clear; clc;
-load zIE_sys.mat
-load zIE_stage0.mat
-load zIE_stage1.mat
+script_dir = fileparts(mfilename('fullpath'));
+load(fullfile(script_dir, 'zIE_sys.mat'))
+load(fullfile(script_dir, 'zIE_stage0.mat'))
+load(fullfile(script_dir, 'zIE_stage1.mat'))
 
 yalmip('clear');
 ops = sdpsettings('solver', 'sedumi', 'verbose', 1, 'cachesolvers', 1);
@@ -51,7 +52,7 @@ for i = 1:N
 end
 
 % 只存数值
-save zIE_stageB.mat Gxv Ghv Lambda_eff -v7
+save(fullfile(script_dir, 'zIE_stageB.mat'), 'Gxv', 'Ghv', 'Lambda_eff', '-v7')
 disp('zIE_stageB.mat 已生成');
 
 % 打印闭环特征值

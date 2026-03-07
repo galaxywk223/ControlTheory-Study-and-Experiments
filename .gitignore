@@ -46,3 +46,6 @@ Cart-Pole System/Lab3/rl_logs/
 Cart-Pole System/Lab3/ppo_pendulum_tensorboard/
 Cart-Pole System/Lab3/runs_v2/
 Cart-Pole System/Lab3/runs_v3/
+
+# Local-only source materials
+23_wu_zhou1_amm/private_source/

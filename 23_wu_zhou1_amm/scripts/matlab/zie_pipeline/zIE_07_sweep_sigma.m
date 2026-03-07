@@ -1,8 +1,9 @@
 %% zIE_07_sweep_sigma.m —— 扫描 sigma & hmin，画折衷曲线
 clear; clc;
-load zIE_sys.mat
-load zIE_stage0.mat
-load zIE_stageB.mat
+script_dir = fileparts(mfilename('fullpath'));
+load(fullfile(script_dir, 'zIE_sys.mat'))
+load(fullfile(script_dir, 'zIE_stage0.mat'))
+load(fullfile(script_dir, 'zIE_stageB.mat'))
 
 rng(3);
 T = 5; dt = 1e-3; Nstep = round(T / dt);
@@ -62,5 +63,5 @@ for hs = hmin_list
     legend(arrayfun(@(x)sprintf('h_{min}=%d', x), hmin_list, 'uni', 0), 'Location', 'best');
     title('事件频率 vs \sigma（不同 h_{min}）');
 
-    save zIE_sweep_sigma.mat res_tbl sigma_list hmin_list -v7
+    save(fullfile(script_dir, 'zIE_sweep_sigma.mat'), 'res_tbl', 'sigma_list', 'hmin_list', '-v7')
     disp('zIE_sweep_sigma.mat 已生成');

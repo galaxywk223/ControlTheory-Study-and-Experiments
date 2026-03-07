@@ -1,6 +1,7 @@
 %% zIE_02_stage0_K.m  —— P域稳定化：求各模态 K_i
 clear; clc;
-load zIE_sys.mat
+script_dir = fileparts(mfilename('fullpath'));
+load(fullfile(script_dir, 'zIE_sys.mat'))
 
 yalmip('clear');
 ops = sdpsettings('solver', 'sedumi', 'verbose', 1, 'cachesolvers', 1);
@@ -29,5 +30,5 @@ Pv = diag(value(Pd)); Xv = Pv \ eye(n);
 Kv = cell(1, N); for i = 1:N, Kv{i} = value(Yi{i}) / Pv; end
 
 % 只存数值
-save zIE_stage0.mat Pv Xv Kv -v7
+save(fullfile(script_dir, 'zIE_stage0.mat'), 'Pv', 'Xv', 'Kv', '-v7')
 disp('zIE_stage0.mat 已生成');

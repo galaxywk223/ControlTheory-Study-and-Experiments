@@ -1,5 +1,6 @@
 %% zIE_01_sys_setup.m  —— 系统/参数 & 保存
 clear; clc;
+script_dir = fileparts(mfilename('fullpath'));
 
 % ========== SeDuMi path（按需修改） ==========
 addpath(genpath('D:\Software\sedumi\sedumi'));
@@ -26,5 +27,5 @@ delta = 0.02; % 触发项: hat{w} 权重（本例仿真先关掉）
 lambda = 0.40; % 扰动模型速率
 
 % 存盘（只存数值）
-save zIE_sys.mat n q m p N A B C D sigma delta lambda -v7
+save(fullfile(script_dir, 'zIE_sys.mat'), 'n', 'q', 'm', 'p', 'N', 'A', 'B', 'C', 'D', 'sigma', 'delta', 'lambda', '-v7')
 disp('zIE_sys.mat 已生成');

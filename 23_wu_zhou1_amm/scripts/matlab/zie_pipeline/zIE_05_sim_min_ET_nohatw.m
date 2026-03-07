@@ -1,8 +1,9 @@
 %% zIE_05_sim_min_ET_nohatw.m —— 最小仿真（不含 hat{w} 触发项）
 clear; clc;
-load zIE_sys.mat
-load zIE_stage0.mat
-load zIE_stageB.mat
+script_dir = fileparts(mfilename('fullpath'));
+load(fullfile(script_dir, 'zIE_sys.mat'))
+load(fullfile(script_dir, 'zIE_stage0.mat'))
+load(fullfile(script_dir, 'zIE_stageB.mat'))
 
 rng(1);
 T = 5; dt = 1e-3; Nstep = round(T / dt);
@@ -66,5 +67,5 @@ events = 1; ev_k = zeros(Nstep, 1); ev_k(1) = 1;
         figure; stem(Tlog(ev_k), ones(numel(ev_k), 1)); grid on; xlabel('t [s]'); title('Event times');
 
         % 只存数值
-        save zIE_sim.mat T dt Xlog Ulog Rlog ev_k dti -v7
+        save(fullfile(script_dir, 'zIE_sim.mat'), 'T', 'dt', 'Xlog', 'Ulog', 'Rlog', 'ev_k', 'dti', '-v7')
         disp('zIE_sim.mat 已生成');

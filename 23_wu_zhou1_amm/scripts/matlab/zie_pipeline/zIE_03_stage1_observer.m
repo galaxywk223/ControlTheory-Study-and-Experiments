@@ -1,7 +1,8 @@
 %% zIE_03_stage1_observer.m —— 固定 K，求 L1 及对角 Lyapunov 块
 clear; clc;
-load zIE_sys.mat
-load zIE_stage0.mat
+script_dir = fileparts(mfilename('fullpath'));
+load(fullfile(script_dir, 'zIE_sys.mat'))
+load(fullfile(script_dir, 'zIE_stage0.mat'))
 
 yalmip('clear');
 ops = sdpsettings('solver', 'sedumi', 'verbose', 1, 'cachesolvers', 1);
@@ -50,5 +51,5 @@ Wv = diag(value(Wd)); Sv = diag(value(Sd));
 L1v = cell(1, N); for i = 1:N, L1v{i} = (Qxv \ value(Z1i{i})); end
 
 % 只存数值
-save zIE_stage1.mat Qxv Qwv Wv Sv L1v -v7
+save(fullfile(script_dir, 'zIE_stage1.mat'), 'Qxv', 'Qwv', 'Wv', 'Sv', 'L1v', '-v7')
 disp('zIE_stage1.mat 已生成');

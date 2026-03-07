@@ -4,6 +4,20 @@
 `Event-triggered extended dissipativity stabilization of semi-Markov switching systems`
 的复现工作，内容包括问题整理、公式推导、DC 电机算例实现、脚本说明与整理导引。
 
+## 论文信息
+
+- 论文标题：`Event-triggered extended dissipativity stabilization of semi-Markov switching systems`
+- 作者：Wenhuang Wu，Ling He，Zhilian Yan，Jianping Zhou
+- 作者单位：安徽工业大学计算机科学与技术学院、电气与信息工程学院
+- 期刊：`Applied Mathematical Modelling`
+- 出版信息：Volume 118, 2023, pp. 618-640
+- DOI：[`10.1016/j.apm.2023.01.045`](https://doi.org/10.1016/j.apm.2023.01.045)
+- 关键词：Semi-Markov switching system，Stochastic stability，Event-triggered control，Extended dissipativity
+
+## 期刊背景
+
+`Applied Mathematical Modelling` 由 Elsevier 出版，是应用数学与工程领域的重要国际期刊。该刊被 SCIE 收录，近年影响因子约为 5.0，在 JCR 的 Mathematics, Interdisciplinary Applications、Mechanics 与 Engineering, Multidisciplinary 分类中长期位于 Q1 区。
+
 ## 内容概览
 
 - 已完成：论文问题与模型整理。

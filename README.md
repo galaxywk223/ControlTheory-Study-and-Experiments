@@ -1,57 +1,38 @@
 # ModernControlTheory
 
-本仓库整理了三部分控制理论相关内容，分别对应论文复现、倒立摆控制项目和理论学习笔记。
+本仓库当前公开内容聚焦于控制理论学习笔记，按主题整理了从线性系统基础到鲁棒控制、采样控制以及部分非线性问题的阅读与推导记录。
 
-## 目录说明
+## Reading Order
 
-### 1. `01_论文复现_半马尔可夫事件触发控制`
+建议按以下顺序阅读：
 
-内容：
+1. [`01_lti_stability.md`](./01_lti_stability.md)
+2. [`02_lti_control.md`](./02_lti_control.md)
+3. [`03_periodic_sampling_control.md`](./03_periodic_sampling_control.md)
+4. [`04_robust_control.md`](./04_robust_control.md)
+5. [`05_delay_neural_network_stability.md`](./05_delay_neural_network_stability.md)
+6. [`06_chaotic_sync_and_image_encryption.md`](./06_chaotic_sync_and_image_encryption.md)
 
-- 半马尔可夫切换系统事件触发控制论文的复现记录；
-- DC 电机算例；
-- MATLAB/Python 复现脚本；
-- 推导整理与配套阅读说明。
+## Public Contents
 
-入口：
+- 线性时不变系统稳定性
+- 线性时不变系统控制
+- 周期采样控制与稳定性分析
+- 鲁棒控制
+- 非线性时滞神经网络稳定性
+- 混沌同步与图像加密
 
-- [`01_论文复现_半马尔可夫事件触发控制/README.md`](./01_论文复现_半马尔可夫事件触发控制/README.md)
-
-### 2. `02_倒立摆控制研究`
-
-内容：
-
-- 倒立摆系统的经典控制；
-- 系统辨识与模型验证；
-- 强化学习控制；
-- 三条路线的项目化整理。
-
-入口：
-
-- [`02_倒立摆控制研究/README.md`](./02_倒立摆控制研究/README.md)
-
-### 3. `03_控制理论整理笔记`
-
-内容：
-
-- 线性时不变系统稳定性；
-- 线性时不变系统控制；
-- 周期采样控制与稳定性分析；
-- 鲁棒控制；
-- 非线性时滞神经网络稳定性；
-- 混沌时滞神经网络同步与图像加密。
-
-入口：
-
-- [`03_控制理论整理笔记/README.md`](./03_控制理论整理笔记/README.md)
-
-## 当前结构
+## Current Layout
 
 ```text
 ModernControlTheory/
-├─ 01_论文复现_半马尔可夫事件触发控制/
-├─ 02_倒立摆控制研究/
-├─ 03_控制理论整理笔记/
+├─ figures/
+├─ 01_lti_stability.md
+├─ 02_lti_control.md
+├─ 03_periodic_sampling_control.md
+├─ 04_robust_control.md
+├─ 05_delay_neural_network_stability.md
+├─ 06_chaotic_sync_and_image_encryption.md
 ├─ README.md
 └─ .gitignore
 ```

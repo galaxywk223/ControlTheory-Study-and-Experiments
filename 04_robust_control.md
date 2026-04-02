@@ -337,3 +337,4 @@ J=\int_0^t \left(z^T(t)z(t)-\gamma^2\omega^T(t)\omega(t)\right)\,dt,
 ```
 
 并借助牛顿-莱布尼兹公式，将问题转化为一个关于 $\begin{bmatrix}x \\ \omega\end{bmatrix}$ 的矩阵不等式判定问题。
+

@@ -119,7 +119,7 @@ K = P^{-1}M
 
 求得。
 
-![定理 1 配图](images/06_chaotic_sync/fig01.jpg)
+![定理 1 配图](figures/06_chaotic_sync/fig01.jpg)
 
 ### 证明思路
 
@@ -252,11 +252,11 @@ K =
 
 驱动系统的相平面轨迹如下：
 
-![驱动系统相平面轨迹](images/06_chaotic_sync/fig04.jpg)
+![驱动系统相平面轨迹](figures/06_chaotic_sync/fig04.jpg)
 
 误差系统的状态轨迹如下：
 
-![误差系统状态轨迹](images/06_chaotic_sync/fig05.jpg)
+![误差系统状态轨迹](figures/06_chaotic_sync/fig05.jpg)
 
 ## 图像加密应用
 
@@ -266,62 +266,63 @@ K =
 
 原图：
 
-![原图](images/06_chaotic_sync/fig06.jpg)
+![原图](figures/06_chaotic_sync/fig06.jpg)
 
 红色通道：
 
-![红色通道](images/06_chaotic_sync/fig07.jpg)
+![红色通道](figures/06_chaotic_sync/fig07.jpg)
 
 绿色通道：
 
-![绿色通道](images/06_chaotic_sync/fig08.jpg)
+![绿色通道](figures/06_chaotic_sync/fig08.jpg)
 
 蓝色通道：
 
-![蓝色通道](images/06_chaotic_sync/fig09.jpg)
+![蓝色通道](figures/06_chaotic_sync/fig09.jpg)
 
 ### 加密与解密结果
 
 加密后的图像结果如下：
 
-![加密结果 1](images/06_chaotic_sync/fig10.jpg)
+![加密结果 1](figures/06_chaotic_sync/fig10.jpg)
 
-![加密结果 2](images/06_chaotic_sync/fig11.jpg)
+![加密结果 2](figures/06_chaotic_sync/fig11.jpg)
 
-![加密结果 3](images/06_chaotic_sync/fig12.jpg)
+![加密结果 3](figures/06_chaotic_sync/fig12.jpg)
 
 解密后的图像结果如下：
 
-![解密结果 1](images/06_chaotic_sync/fig13.jpg)
+![解密结果 1](figures/06_chaotic_sync/fig13.jpg)
 
-![解密结果 2](images/06_chaotic_sync/fig14.jpg)
+![解密结果 2](figures/06_chaotic_sync/fig14.jpg)
 
-![解密结果 3](images/06_chaotic_sync/fig15.jpg)
+![解密结果 3](figures/06_chaotic_sync/fig15.jpg)
 
 ### 灰度直方图分析
 
 原图与加密图的灰度直方图如下：
 
-![灰度直方图 1](images/06_chaotic_sync/fig16.jpg)
+![灰度直方图 1](figures/06_chaotic_sync/fig16.jpg)
 
-![灰度直方图 2](images/06_chaotic_sync/fig17.jpg)
+![灰度直方图 2](figures/06_chaotic_sync/fig17.jpg)
 
-![灰度直方图 3](images/06_chaotic_sync/fig18.jpg)
+![灰度直方图 3](figures/06_chaotic_sync/fig18.jpg)
 
-![灰度直方图 4](images/06_chaotic_sync/fig19.jpg)
+![灰度直方图 4](figures/06_chaotic_sync/fig19.jpg)
 
-![灰度直方图 5](images/06_chaotic_sync/fig20.jpg)
+![灰度直方图 5](figures/06_chaotic_sync/fig20.jpg)
 
-![灰度直方图 6](images/06_chaotic_sync/fig21.jpg)
+![灰度直方图 6](figures/06_chaotic_sync/fig21.jpg)
 
 ### 相关性分析
 
 原图相关性分析：
 
-![原图相关性 1](images/06_chaotic_sync/fig22.jpg)
+![原图相关性 1](figures/06_chaotic_sync/fig22.jpg)
 
-![原图相关性 2](images/06_chaotic_sync/fig23.jpg)
+![原图相关性 2](figures/06_chaotic_sync/fig23.jpg)
 
 ### 小结
 
 从图像结果可以看出，加密后的图像已经失去明显的统计结构，说明混沌加密在像素分布打散方面是有效的。
+

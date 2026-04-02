@@ -336,9 +336,9 @@ B=\operatorname{diag}(5.8705212,15.50107).
 
 仿真结果如下：
 
-![仿真结果 1](images/03_periodic_sampling/fig01.jpg)
+![仿真结果 1](figures/03_periodic_sampling/fig01.jpg)
 
-![仿真结果 2](images/03_periodic_sampling/fig02.jpg)
+![仿真结果 2](figures/03_periodic_sampling/fig02.jpg)
 
 ## 小结
 
@@ -349,3 +349,4 @@ B=\operatorname{diag}(5.8705212,15.50107).
 3. 用 Jensen 不等式和端点 LMI 技术，将区间稳定性条件转化为有限个矩阵不等式。
 4. 通过解耦技巧降低控制器增益与辅助变量之间的耦合难度。
 5. 最终通过 LMI 求解控制增益，并通过仿真验证闭环系统稳定性。
+

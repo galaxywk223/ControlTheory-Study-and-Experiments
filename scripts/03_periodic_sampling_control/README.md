@@ -4,8 +4,8 @@
 
 ## 内容
 
-- `reproduce.py`：Python 版本
-- `reproduce.m`：MATLAB 版本
+- `generate_results.py`：Python 版本
+- `generate_results.m`：MATLAB 版本
 
 ## 示例参数
 
@@ -49,15 +49,15 @@ $$
 ## 运行方式
 
 ```powershell
-python scripts/03_periodic_sampling_control/reproduce.py
+python scripts/03_periodic_sampling_control/generate_results.py
 ```
 
 ```powershell
-matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/03_periodic_sampling_control/reproduce.m');"
+matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/03_periodic_sampling_control/generate_results.m');"
 ```
 
 ## 说明
 
 - 脚本采用零阶保持采样控制律 `u(t)=Kx(t_k)`。
 - MATLAB 与 Python 版本使用相同的系统矩阵和控制增益。
-- 图像文件使用 `reproduced_*.png` 命名，不覆盖已有插图。
+- 图像文件使用语义化文件名，便于直接在仓库中引用。

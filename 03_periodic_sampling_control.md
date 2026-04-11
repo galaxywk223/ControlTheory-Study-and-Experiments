@@ -372,7 +372,7 @@ $$
 
 连续状态轨迹与采样时刻状态如下图所示。
 
-![连续状态与采样状态结果](figures/03_periodic_sampling/reproduced_continuous_and_sampled_states_matlab.png)
+![连续状态与采样状态结果](figures/03_periodic_sampling/continuous_sampled_states.png)
 
 可以看到：
 
@@ -396,7 +396,7 @@ $$
 
 零阶保持控制输入如下图所示。
 
-![零阶保持控制输入结果](figures/03_periodic_sampling/reproduced_zoh_control_signals_matlab.png)
+![零阶保持控制输入结果](figures/03_periodic_sampling/zoh_control_signals.png)
 
 控制输入在每个采样区间内保持常值，并随着状态衰减而逐步趋于零，这与周期采样控制器的结构一致。
 
@@ -409,4 +409,3 @@ $$
 3. 用 Jensen 不等式和端点 LMI 技术，将区间稳定性条件转化为有限个矩阵不等式。
 4. 通过解耦技巧降低控制器增益与辅助变量之间的耦合难度。
 5. 最终通过 LMI 求解控制增益，并通过采样状态响应与控制输入验证闭环系统稳定性。
-

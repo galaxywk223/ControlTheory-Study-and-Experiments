@@ -119,8 +119,6 @@ $$
 
 求得。
 
-![定理 1 配图](figures/06_chaotic_sync/fig01.jpg)
-
 ### 证明思路
 
 构造 Lyapunov 泛函
@@ -150,9 +148,11 @@ $$
 再结合 Lipschitz 条件与杨氏不等式，对非线性项进行上界估计，最终得到一个关于
 $e(t)$ 和 $e(t-\tau)$ 的二次型不等式。利用 Schur 补即可得到上面的 LMI 条件。
 
-## 仿真示例
+## 数值同步结果
 
-考虑如下 Hopfield 神经网络：
+### 系统设置
+
+考虑如下两神经元时滞 Hopfield 网络：
 
 $$
 \left[
@@ -163,7 +163,7 @@ $$
 \right]
 =
 \left[
-\begin{array}{l l}
+\begin{array}{c c}
 -1 & 0 \\
 0 & -1
 \end{array}
@@ -176,7 +176,7 @@ x_2(t)
 \right]
 +
 \left[
-\begin{array}{l l}
+\begin{array}{c c}
 2 & -0.1 \\
 -5 & 2
 \end{array}
@@ -189,7 +189,7 @@ x_2(t)
 \right]
 +
 \left[
-\begin{array}{l l}
+\begin{array}{c c}
 -1.5 & -0.1 \\
 -0.2 & -1.5
 \end{array}
@@ -202,7 +202,7 @@ x_2(t)
 \right].
 $$
 
-驱动系统与响应系统初值分别为
+驱动系统与响应系统历史函数分别取为
 
 $$
 \left[
@@ -233,10 +233,10 @@ x_2(s)
 \end{array}
 \right],
 \qquad
-s\in[-1,0].
+s \in [-1,0].
 $$
 
-求得控制增益
+同步控制增益取为
 
 $$
 K =
@@ -248,81 +248,83 @@ K =
 \right].
 $$
 
-### 仿真结果
+### 驱动系统相图
 
-驱动系统的相平面轨迹如下：
+对驱动系统单独仿真并截取 $t \ge 20\,\mathrm{s}$ 的轨迹后，相平面轨迹如下：
 
-![驱动系统相平面轨迹](figures/06_chaotic_sync/fig04.jpg)
+![驱动系统相平面轨迹](figures/06_chaotic_sync/drive_phase_portrait.png)
 
-误差系统的状态轨迹如下：
+轨线在平面内持续绕转并保持复杂形状，说明该系统本身具有明显的复杂动力学行为，适合作为同步与加密的密钥源。
 
-![误差系统状态轨迹](figures/06_chaotic_sync/fig05.jpg)
+### 同步误差收敛
 
-## 图像加密应用
+误差状态与误差范数的变化如下：
 
-文档后半部分给出了一个基于混沌系统的图像加密示例。其核心思路是利用混沌轨道生成密钥流，对图像像素进行置乱或扩散，从而破坏原始图像的统计特征。
+![同步误差状态与误差范数](figures/06_chaotic_sync/synchronization_error.png)
 
-### 原始图像与 RGB 通道
+按脚本计算，
 
-原图：
+$$
+\|e(t)\|_2 \le 10^{-2}
+$$
 
-![原图](figures/06_chaotic_sync/fig06.jpg)
+后不再离开的时间约为 $1.048\,\mathrm{s}$，
 
-红色通道：
+$$
+\|e(t)\|_2 \le 10^{-4}
+$$
 
-![红色通道](figures/06_chaotic_sync/fig07.jpg)
+后不再离开的时间约为 $2.214\,\mathrm{s}$。控制输入两维的峰值绝对值分别约为 $46.8403$ 和 $132.7092$。在这组参数下，响应系统可以较快贴近驱动系统并保持同步。
 
-绿色通道：
+## 图像加密结果
 
-![绿色通道](figures/06_chaotic_sync/fig08.jpg)
+### 输入图像与通道分解
 
-蓝色通道：
+图像加密部分使用仓库内的输入图像
 
-![蓝色通道](figures/06_chaotic_sync/fig09.jpg)
+$$
+\texttt{figures/06\_chaotic\_sync/plaintext\_input\_image.jpg}.
+$$
+
+原图及其 RGB 通道如下：
+
+![原图与 RGB 通道](figures/06_chaotic_sync/plaintext_rgb_channels.png)
+
+同步轨迹在 $t=12\,\mathrm{s}$、$16\,\mathrm{s}$、$20\,\mathrm{s}$ 的状态值用于构造三个种子，脚本实际得到
+
+$$
+s_1 \approx 0.6332,\qquad s_2 \approx 0.1481,\qquad s_3 \approx 0.3670.
+$$
+
+接着使用这组三个种子生成行置乱序列、列置乱序列以及逐像素扩散密钥流。
 
 ### 加密与解密结果
 
-加密后的图像结果如下：
+原图、密文图像与解密恢复结果如下：
 
-![加密结果 1](figures/06_chaotic_sync/fig10.jpg)
+![原图、加密图与解密图](figures/06_chaotic_sync/encryption_pipeline.png)
 
-![加密结果 2](figures/06_chaotic_sync/fig11.jpg)
+密文图像已经不再保留可辨识的视觉结构，而解密图像与原图逐像素一致，脚本校验结果为精确恢复。
 
-![加密结果 3](figures/06_chaotic_sync/fig12.jpg)
+### 通道直方图
 
-解密后的图像结果如下：
+原图与密文图像三个通道的像素直方图如下：
 
-![解密结果 1](figures/06_chaotic_sync/fig13.jpg)
+![原图与密文图像的 RGB 直方图](figures/06_chaotic_sync/rgb_histograms_before_after_encryption.png)
 
-![解密结果 2](figures/06_chaotic_sync/fig14.jpg)
+原图三个通道的分布都带有明显的内容特征；加密后各通道直方图明显变平，像素统计分布更接近均匀状态。
 
-![解密结果 3](figures/06_chaotic_sync/fig15.jpg)
+### 相邻像素相关性
 
-### 灰度直方图分析
+灰度图像在水平与垂直方向上的相邻像素相关系数如下：
 
-原图与加密图的灰度直方图如下：
+| 图像  | 水平相关系数  | 垂直相关系数  |
+| --- | -------:| -------:|
+| 原图  | 0.9854  | 0.9759  |
+| 密文图 | -0.0103 | -0.0081 |
 
-![灰度直方图 1](figures/06_chaotic_sync/fig16.jpg)
+对应散点图如下：
 
-![灰度直方图 2](figures/06_chaotic_sync/fig17.jpg)
+![原图与密文图的相邻像素相关性散点图](figures/06_chaotic_sync/adjacent_pixel_correlation.png)
 
-![灰度直方图 3](figures/06_chaotic_sync/fig18.jpg)
-
-![灰度直方图 4](figures/06_chaotic_sync/fig19.jpg)
-
-![灰度直方图 5](figures/06_chaotic_sync/fig20.jpg)
-
-![灰度直方图 6](figures/06_chaotic_sync/fig21.jpg)
-
-### 相关性分析
-
-原图相关性分析：
-
-![原图相关性 1](figures/06_chaotic_sync/fig22.jpg)
-
-![原图相关性 2](figures/06_chaotic_sync/fig23.jpg)
-
-### 小结
-
-从图像结果可以看出，加密后的图像已经失去明显的统计结构，说明混沌加密在像素分布打散方面是有效的。
-
+原图散点大多沿对角线分布，说明相邻像素高度相关；加密后的散点则扩散成近似云团，说明相邻像素关系已被有效打散。

@@ -31,6 +31,9 @@
 - `scripts/01_lti_stability/`：线性时不变系统稳定性笔记的 MATLAB/Python 脚本
 - `scripts/02_lti_control/`：线性时不变系统控制笔记的 MATLAB/Python 脚本
 - `scripts/03_periodic_sampling_control/`：周期采样控制笔记的 MATLAB/Python 脚本
+- `scripts/04_robust_control/`：鲁棒控制笔记的 MATLAB/Python 脚本
+- `scripts/05_delay_neural_network_stability/`：时滞神经网络稳定性笔记的 MATLAB/Python 脚本
+- `scripts/06_chaotic_sync_and_image_encryption/`：混沌同步与图像加密笔记的 MATLAB/Python 脚本
 
 对应输出：
 
@@ -40,31 +43,61 @@
 - 数值结果写入 `generated/02_lti_control/`
 - 图像写入 `figures/03_periodic_sampling/`
 - 数值结果写入 `generated/03_periodic_sampling/`
+- 图像写入 `figures/04_robust_control/`
+- 数值结果写入 `generated/04_robust_control/`
+- 图像写入 `figures/05_delay_neural_network_stability/`
+- 数值结果写入 `generated/05_delay_neural_network_stability/`
+- 图像写入 `figures/06_chaotic_sync/`
+- 数值结果写入 `generated/06_chaotic_sync/`
 
 运行示例：
 
 ```powershell
-python scripts/01_lti_stability/reproduce.py
+python scripts/01_lti_stability/generate_results.py
 ```
 
 ```powershell
-matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/01_lti_stability/reproduce.m');"
+matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/01_lti_stability/generate_results.m');"
 ```
 
 ```powershell
-python scripts/02_lti_control/reproduce.py
+python scripts/02_lti_control/generate_results.py
 ```
 
 ```powershell
-matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/02_lti_control/reproduce.m');"
+matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/02_lti_control/generate_results.m');"
 ```
 
 ```powershell
-python scripts/03_periodic_sampling_control/reproduce.py
+python scripts/03_periodic_sampling_control/generate_results.py
 ```
 
 ```powershell
-matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/03_periodic_sampling_control/reproduce.m');"
+matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/03_periodic_sampling_control/generate_results.m');"
+```
+
+```powershell
+python scripts/04_robust_control/generate_results.py
+```
+
+```powershell
+matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/04_robust_control/generate_results.m');"
+```
+
+```powershell
+python scripts/05_delay_neural_network_stability/generate_results.py
+```
+
+```powershell
+matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/05_delay_neural_network_stability/generate_results.m');"
+```
+
+```powershell
+python scripts/06_chaotic_sync_and_image_encryption/generate_results.py
+```
+
+```powershell
+matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/06_chaotic_sync_and_image_encryption/generate_results.m');"
 ```
 
 ## Current Layout
@@ -75,16 +108,28 @@ ModernControlTheory/
 ├─ scripts/
 │  ├─ 01_lti_stability/
 │  │  ├─ README.md
-│  │  ├─ reproduce.m
-│  │  └─ reproduce.py
+│  │  ├─ generate_results.m
+│  │  └─ generate_results.py
 │  ├─ 02_lti_control/
 │  │  ├─ README.md
-│  │  ├─ reproduce.m
-│  │  └─ reproduce.py
-│  └─ 03_periodic_sampling_control/
+│  │  ├─ generate_results.m
+│  │  └─ generate_results.py
+│  ├─ 03_periodic_sampling_control/
+│  │  ├─ README.md
+│  │  ├─ generate_results.m
+│  │  └─ generate_results.py
+│  ├─ 04_robust_control/
+│  │  ├─ README.md
+│  │  ├─ generate_results.m
+│  │  └─ generate_results.py
+│  ├─ 05_delay_neural_network_stability/
+│  │  ├─ README.md
+│  │  ├─ generate_results.m
+│  │  └─ generate_results.py
+│  └─ 06_chaotic_sync_and_image_encryption/
 │     ├─ README.md
-│     ├─ reproduce.m
-│     └─ reproduce.py
+│     ├─ generate_results.m
+│     └─ generate_results.py
 ├─ generated/                  # 运行脚本后自动生成，默认不纳入版本控制
 ├─ 01_lti_stability.md
 ├─ 02_lti_control.md

@@ -253,7 +253,7 @@ $$
 
 在上述初值下，两个状态分量都收敛到原点。由于系统极点为共轭复数对，状态响应呈现带衰减的振荡收敛。
 
-![状态轨迹结果](figures/01_lti_stability/reproduced_state_trajectories_matlab.png)
+![状态轨迹结果](figures/01_lti_stability/state_trajectories.png)
 
 由图可见：
 
@@ -276,7 +276,7 @@ $$
 
 取若干不同初值，对应的相平面轨迹如下图所示。
 
-![相平面结果](figures/01_lti_stability/reproduced_phase_portrait_matlab.png)
+![相平面结果](figures/01_lti_stability/phase_portrait.png)
 
 可以看到，所有轨迹最终都螺旋式收敛到平衡点 $(0,0)$，这与稳定焦点的理论分析一致。
 
@@ -291,4 +291,3 @@ $$
    - 李雅普诺夫判据。
 4. 说明如何通过二次型 Lyapunov 函数证明指数稳定。
 5. 通过数值计算与相平面轨迹验证系统的渐近稳定性。
-

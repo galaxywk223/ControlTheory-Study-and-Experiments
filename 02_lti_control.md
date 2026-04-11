@@ -267,7 +267,7 @@ $$
 
 在未施加控制器时，两个状态分量随时间持续增大或减小，系统不收敛。
 
-![开环状态响应](figures/02_lti_control/reproduced_open_loop_state_response_matlab.png)
+![开环状态响应](figures/02_lti_control/open_loop_state_response.png)
 
 在该示例中，
 
@@ -285,31 +285,31 @@ $$
 
 采用定理 2 的状态反馈综合方法后，闭环响应呈现高频振荡并快速衰减，两个状态最终都收敛到原点。
 
-![定理 2 状态反馈结果](figures/02_lti_control/reproduced_state_feedback_theorem_2_response_matlab.png)
+![定理 2 状态反馈结果](figures/02_lti_control/theorem_2_state_feedback_response.png)
 
 ### 6.5 定理 3 对应控制结果
 
 定理 3 对应的一般状态反馈设计同样可以实现稳定。与定理 2 相比，响应振荡次数更少，衰减过程更平滑。
 
-![定理 3 状态反馈结果](figures/02_lti_control/reproduced_state_feedback_theorem_3_response_matlab.png)
+![定理 3 状态反馈结果](figures/02_lti_control/theorem_3_state_feedback_response.png)
 
 ### 6.6 定理 5 对应控制结果
 
 定理 5 的输出反馈变量解耦方法同样可以稳定系统。其响应形式与定理 2 相近，也表现为快速振荡衰减。
 
-![定理 5 输出反馈结果](figures/02_lti_control/reproduced_output_feedback_theorem_5_response_matlab.png)
+![定理 5 输出反馈结果](figures/02_lti_control/theorem_5_output_feedback_response.png)
 
 ### 6.7 定理 6 对应控制结果
 
 定理 6 的辅助变量方法得到的输出反馈控制器也能保证闭环稳定。与前一类输出反馈结果相比，状态收敛过程更直接，超调较小。
 
-![定理 6 输出反馈结果](figures/02_lti_control/reproduced_output_feedback_theorem_6_response_matlab.png)
+![定理 6 输出反馈结果](figures/02_lti_control/theorem_6_output_feedback_response.png)
 
 ### 6.8 定理 7 对应控制结果
 
 定理 7 的分步设计结果也能使状态收敛到原点。其响应形态与定理 6 接近，但初始瞬态略有不同。
 
-![定理 7 输出反馈结果](figures/02_lti_control/reproduced_output_feedback_theorem_7_response_matlab.png)
+![定理 7 输出反馈结果](figures/02_lti_control/theorem_7_output_feedback_response.png)
 
 ### 6.9 结果比较
 
@@ -329,4 +329,3 @@ $$
 3. 对状态反馈，采用 $L=KX$ 一类变量代换完成综合；
 4. 对输出反馈，通过引入辅助变量或分步设计，缓解双线性耦合问题；
 5. 最后用仿真结果验证所设计控制器的稳定效果。
-

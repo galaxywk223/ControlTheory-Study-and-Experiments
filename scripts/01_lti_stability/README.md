@@ -4,8 +4,8 @@
 
 ## 内容
 
-- `reproduce.py`：Python 版本
-- `reproduce.m`：MATLAB 版本
+- `generate_results.py`：Python 版本
+- `generate_results.m`：MATLAB 版本
 
 两份脚本均完成以下内容：
 
@@ -22,15 +22,15 @@
 ## 运行方式
 
 ```powershell
-python scripts/01_lti_stability/reproduce.py
+python scripts/01_lti_stability/generate_results.py
 ```
 
 ```powershell
-matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/01_lti_stability/reproduce.m');"
+matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/01_lti_stability/generate_results.m');"
 ```
 
 ## 说明
 
 - MATLAB 与 Python 输出的数值结果应保持一致。
-- 图像文件使用 `reproduced_*.png` 命名，不覆盖已有插图。
+- 图像文件使用语义化文件名，便于直接在仓库中引用。
 - `figures/01_lti_stability/lyapunov_stability_epsilon_delta.jpg` 属于示意图，不在脚本生成范围内。

@@ -22,11 +22,40 @@
 - 非线性时滞神经网络稳定性
 - 混沌同步与图像加密
 
+## Reproduction Scripts
+
+相关脚本统一放在 `scripts/` 目录下，运行产生的数值结果统一放在 `generated/` 目录下。
+
+当前已补充：
+
+- `scripts/01_lti_stability/`：线性时不变系统稳定性笔记的 MATLAB/Python 脚本
+
+对应输出：
+
+- 图像写入 `figures/01_lti_stability/`
+- 数值结果写入 `generated/01_lti_stability/`
+
+运行示例：
+
+```powershell
+python scripts/01_lti_stability/reproduce.py
+```
+
+```powershell
+matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/01_lti_stability/reproduce.m');"
+```
+
 ## Current Layout
 
 ```text
 ModernControlTheory/
 ├─ figures/
+├─ scripts/
+│  └─ 01_lti_stability/
+│     ├─ README.md
+│     ├─ reproduce.m
+│     └─ reproduce.py
+├─ generated/                  # 运行脚本后自动生成，默认不纳入版本控制
 ├─ 01_lti_stability.md
 ├─ 02_lti_control.md
 ├─ 03_periodic_sampling_control.md

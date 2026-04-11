@@ -40,4 +40,5 @@ venv/
 
 # Data/plots
 # Keep curated figures and small datasets tracked; ignore only large experiment artifacts via patterns above and folders below.
+generated/
 

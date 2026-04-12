@@ -333,7 +333,7 @@ A=
 5.1546 & 14.4723
 \end{pmatrix},
 \qquad
-B=\operatorname{diag}(5.8705212,15.50107).
+B=\mathrm{diag}(5.8705212,15.50107).
 ```
 
 控制器采用周期采样律

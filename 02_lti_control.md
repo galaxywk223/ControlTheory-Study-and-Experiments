@@ -46,7 +46,7 @@ u(t)=Ky(t)=KCx(t).
 对于矩阵交叉项，常采用如下松弛不等式：
 
 ```math
-\Lambda+\sum_{i=1}^N \operatorname{He}\!\left(U_iW_i^{-1}V_i^\top\right)<0
+\Lambda+\sum_{i=1}^N \mathrm{He}\!\left(U_iW_i^{-1}V_i^\top\right)<0
 ```
 
 可由增广块矩阵形式推出等价或充分条件，以便消去非线性耦合项。
@@ -126,7 +126,7 @@ K=LX^{-1}.
 其闭环项通常以
 
 ```math
-\operatorname{He}(AX+BL)
+\mathrm{He}(AX+BL)
 ```
 
 的形式出现在矩阵不等式中。

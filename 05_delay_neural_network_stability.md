@@ -11,7 +11,7 @@
 其中：
 
 - $x(t) = [x_1(t)\dots x_n(t)]^T$ 是神经元状态向量。
-- $A = -\operatorname{diag}\{a_{1}, a_{2}, \ldots, a_{n}\}$，其中 $a_i > 0$，是自反馈矩阵。
+- $A = -\mathrm{diag}\{a_{1}, a_{2}, \ldots, a_{n}\}$，其中 $a_i > 0$，是自反馈矩阵。
 - $W$ 是连接权矩阵。
 - $\tau$ 是时滞。
 - $f(x(t)) = [f_1(x_1(t)) \cdots f_n(x_n(t))]^T$ 是激活函数向量。

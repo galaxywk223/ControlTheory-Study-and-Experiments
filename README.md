@@ -1,151 +1,79 @@
-# 现代控制理论学习与实验笔记
+# 控制理论学习与实验整理
 
-本仓库当前公开内容聚焦于控制理论学习笔记，按主题整理了从线性系统基础到鲁棒控制、采样控制以及部分非线性问题的阅读与推导记录。
+这个仓库整理了我在现代控制理论方向上的学习笔记和配套数值实验。笔记以中文为主，实验分别提供 Python 和 MATLAB 版本，内容会继续补充。
 
-## 阅读顺序
+## 内容概览
 
-建议按以下顺序阅读：
+目前仓库包含以下主题：
 
-1. [线性时不变系统稳定性笔记](./01_线性时不变系统稳定性.md)
-2. [线性时不变系统控制笔记](./02_线性时不变系统控制.md)
-3. [线性时不变系统周期采样控制与稳定性分析笔记](./03_线性时不变系统周期采样控制与稳定性分析.md)
-4. [鲁棒控制笔记](./04_鲁棒控制.md)
-5. [非线性时滞神经网络稳定性笔记](./05_非线性时滞神经网络稳定性.md)
-6. [混沌时滞神经网络同步与图像加密笔记](./06_混沌时滞神经网络同步与图像加密.md)
+1. [线性时不变系统稳定性](notes/01_线性时不变系统稳定性.md)
+2. [线性时不变系统控制](notes/02_线性时不变系统控制.md)
+3. [线性时不变系统周期采样控制与稳定性分析](notes/03_线性时不变系统周期采样控制与稳定性分析.md)
+4. [鲁棒控制](notes/04_鲁棒控制.md)
+5. [非线性时滞神经网络稳定性](notes/05_非线性时滞神经网络稳定性.md)
+6. [混沌时滞神经网络同步与图像加密](notes/06_混沌时滞神经网络同步与图像加密.md)
 
-## 公开内容
+这些笔记以连续时间 LTI 系统为起点，逐步延伸到采样控制、鲁棒控制，以及时滞神经网络和混沌同步问题。
 
-- 线性时不变系统稳定性
-- 线性时不变系统控制
-- 线性时不变系统周期采样控制与稳定性分析
-- 鲁棒控制
-- 非线性时滞神经网络稳定性
-- 混沌时滞神经网络同步与图像加密
+## 实验说明
 
-## 复现实验脚本
+- `notes/` 保存笔记正文，按编号继续扩展。
+- `scripts/` 保存复现实验脚本，按主题类别分组。
+- `figures/` 保存笔记中直接引用的图像。
+- `generated/` 保存脚本生成的数值结果，默认不纳入版本控制。
 
-相关脚本统一放在 `scripts/` 目录下，运行产生的数值结果统一放在 `generated/` 目录下。
+当前实验脚本分布如下：
 
-当前已补充：
+- `scripts/foundations/`：线性系统稳定性、控制与周期采样控制
+- `scripts/robust_control/`：鲁棒控制
+- `scripts/nonlinear_and_delay/`：时滞神经网络稳定性、混沌同步与图像加密
 
-- `scripts/01_lti_stability/`：线性时不变系统稳定性笔记的 MATLAB/Python 脚本
-- `scripts/02_lti_control/`：线性时不变系统控制笔记的 MATLAB/Python 脚本
-- `scripts/03_periodic_sampling_control/`：线性时不变系统周期采样控制与稳定性分析笔记的 MATLAB/Python 脚本
-- `scripts/04_robust_control/`：鲁棒控制笔记的 MATLAB/Python 脚本
-- `scripts/05_delay_neural_network_stability/`：非线性时滞神经网络稳定性笔记的 MATLAB/Python 脚本
-- `scripts/06_chaotic_sync_and_image_encryption/`：混沌时滞神经网络同步与图像加密笔记的 MATLAB/Python 脚本
+## 运行方式
 
-对应输出：
+Python 依赖见 [requirements.txt](requirements.txt)。
 
-- 图像写入 `figures/01_lti_stability/`
-- 数值结果写入 `generated/01_lti_stability/`
-- 图像写入 `figures/02_lti_control/`
-- 数值结果写入 `generated/02_lti_control/`
-- 图像写入 `figures/03_periodic_sampling/`
-- 数值结果写入 `generated/03_periodic_sampling/`
-- 图像写入 `figures/04_robust_control/`
-- 数值结果写入 `generated/04_robust_control/`
-- 图像写入 `figures/05_delay_neural_network_stability/`
-- 数值结果写入 `generated/05_delay_neural_network_stability/`
-- 图像写入 `figures/06_chaotic_sync/`
-- 数值结果写入 `generated/06_chaotic_sync/`
-
-运行示例：
+在仓库根目录下可直接运行，例如：
 
 ```powershell
-python scripts/01_lti_stability/generate_results.py
+python scripts/foundations/01_lti_stability/generate_results.py
 ```
 
 ```powershell
-matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/01_lti_stability/generate_results.m');"
+python scripts/robust_control/04_robust_control/generate_results.py
+```
+
+MATLAB 版本同样在仓库根目录运行：
+
+```powershell
+matlab -batch "run('scripts/foundations/01_lti_stability/generate_results.m')"
 ```
 
 ```powershell
-python scripts/02_lti_control/generate_results.py
+matlab -batch "run('scripts/nonlinear_and_delay/06_chaotic_sync_and_image_encryption/generate_results.m')"
 ```
 
-```powershell
-matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/02_lti_control/generate_results.m');"
-```
-
-```powershell
-python scripts/03_periodic_sampling_control/generate_results.py
-```
-
-```powershell
-matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/03_periodic_sampling_control/generate_results.m');"
-```
-
-```powershell
-python scripts/04_robust_control/generate_results.py
-```
-
-```powershell
-matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/04_robust_control/generate_results.m');"
-```
-
-```powershell
-python scripts/05_delay_neural_network_stability/generate_results.py
-```
-
-```powershell
-matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/05_delay_neural_network_stability/generate_results.m');"
-```
-
-```powershell
-python scripts/06_chaotic_sync_and_image_encryption/generate_results.py
-```
-
-```powershell
-matlab -batch "cd('D:/Code/Lab/ControlTheory-Study-and-Projects'); run('scripts/06_chaotic_sync_and_image_encryption/generate_results.m');"
-```
-
-## 当前目录结构
+## 仓库结构
 
 ```text
-ModernControlTheory/
+ControlTheory-Study-and-Experiments/
+├─ notes/
 ├─ figures/
 ├─ scripts/
-│  ├─ 01_lti_stability/
-│  │  ├─ README.md
-│  │  ├─ generate_results.m
-│  │  └─ generate_results.py
-│  ├─ 02_lti_control/
-│  │  ├─ README.md
-│  │  ├─ generate_results.m
-│  │  └─ generate_results.py
-│  ├─ 03_periodic_sampling_control/
-│  │  ├─ README.md
-│  │  ├─ generate_results.m
-│  │  └─ generate_results.py
-│  ├─ 04_robust_control/
-│  │  ├─ README.md
-│  │  ├─ generate_results.m
-│  │  └─ generate_results.py
-│  ├─ 05_delay_neural_network_stability/
-│  │  ├─ README.md
-│  │  ├─ generate_results.m
-│  │  └─ generate_results.py
-│  └─ 06_chaotic_sync_and_image_encryption/
-│     ├─ README.md
-│     ├─ generate_results.m
-│     └─ generate_results.py
-├─ generated/                  # 运行脚本后自动生成，默认不纳入版本控制
-├─ 01_线性时不变系统稳定性.md
-├─ 02_线性时不变系统控制.md
-├─ 03_线性时不变系统周期采样控制与稳定性分析.md
-├─ 04_鲁棒控制.md
-├─ 05_非线性时滞神经网络稳定性.md
-├─ 06_混沌时滞神经网络同步与图像加密.md
+│  ├─ foundations/
+│  ├─ robust_control/
+│  └─ nonlinear_and_delay/
+├─ generated/
+├─ requirements.txt
 ├─ README.md
-└─ .gitignore
+└─ LICENSE
 ```
 
-## 开源协议
+## 说明
 
-本仓库中的笔记、图示与文档内容基于 [MIT 许可证](./LICENSE) 开源。
+- 笔记和实验会继续补充，新内容仍按编号加入 `notes/`。
+- 实验图像会尽量保持稳定的英文目录名，便于脚本和文档引用。
+- `generated/` 中的文件主要用于本地复现检查，不作为仓库正文的一部分。
 
-补充说明：
+## 许可证
 
-- 本仓库的许可证仅覆盖当前仓库中自行编写和整理的笔记文本、图示素材与文档结构。
-- 引用到的教材观点、论文结论、理论模型及其他第三方原始内容，不因本仓库采用 MIT 协议而自动转授任何额外权利。
+仓库中的笔记、图示与文档结构采用 [MIT 许可证](LICENSE) 开源。

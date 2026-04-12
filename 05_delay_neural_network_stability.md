@@ -108,8 +108,7 @@ L = \mathrm{diag}\bigl(\alpha_1,\alpha_2,\ldots,\alpha_n\bigr).
 ```math
 f ^ {T} (x (t - \tau)) L ^ {- 1} Q L ^ {- 1} f (x (t - \tau))
 \leq
-x ^ {T} (t - \tau) Q x (t - \tau).
-\tag{2}
+x ^ {T} (t - \tau) Q x (t - \tau). \qquad \text{(2)}
 ```
 
 将导数估计与式 (2) 联立可得
@@ -191,8 +190,7 @@ x ^ {T} (t) \left(A ^ {T} P + P A\right) x (t)
 ```math
 f ^ {T} (x (t)) Q f (x (t))
 \leq
-x ^ {T} (t) L Q L x (t).
-\tag{4}
+x ^ {T} (t) L Q L x (t). \qquad \text{(4)}
 ```
 
 将导数估计与式 (4) 联立，可得
@@ -309,8 +307,7 @@ f ^ {T} (x (t)) U L x (t).
 因此，
 
 ```math
-2 \left(f ^ {T} (x (t)) U L x (t) - f ^ {T} (x (t)) U f (x (t))\right) \geq 0.
-\tag{6}
+2 \left(f ^ {T} (x (t)) U L x (t) - f ^ {T} (x (t)) U f (x (t))\right) \geq 0. \qquad \text{(6)}
 ```
 
 将导数估计与式 (6) 联立，即可得到定理 3 中的充分条件矩阵不等式，从而证明系统渐近稳定。

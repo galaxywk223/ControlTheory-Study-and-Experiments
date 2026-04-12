@@ -5,13 +5,13 @@
 考虑如下线性时不变系统：
 
 ```math
-\dot{x}(t)=Ax(t)+Bu(t). \tag{1}
+\dot{x}(t)=Ax(t)+Bu(t). \qquad \text{(1)}
 ```
 
 控制器采用周期采样状态反馈形式：
 
 ```math
-u(t)=Kx(t_k), \qquad t\in[t_k,t_{k+1}), \tag{2}
+u(t)=Kx(t_k), \qquad t\in[t_k,t_{k+1}), \qquad \text{(2)}
 ```
 
 其中
@@ -35,7 +35,7 @@ $h$ 为采样周期。
 则系统可以改写为时滞形式
 
 ```math
-\dot{x}(t)=Ax(t)+BKx(t-\tau(t)). \tag{3}
+\dot{x}(t)=Ax(t)+BKx(t-\tau(t)). \qquad \text{(3)}
 ```
 
 ## 稳定性分析
@@ -47,7 +47,7 @@ $h$ 为采样周期。
 ```math
 V\left(t,x_t,\dot{x}_t\right)
 =
-V_S\left(t,x_t,\dot{x}_t\right)+V_X\left(t,x_t\right), \tag{4}
+V_S\left(t,x_t,\dot{x}_t\right)+V_X\left(t,x_t\right), \qquad \text{(4)}
 ```
 
 其中
@@ -56,7 +56,7 @@ V_S\left(t,x_t,\dot{x}_t\right)+V_X\left(t,x_t\right), \tag{4}
 V_S\left(t,x_t,\dot{x}_t\right)
 =
 x^T(t)Px(t)
-+ (h-\tau(t))\int_{t-\tau(t)}^t e^{2\alpha(s-t)}\dot{x}^T(s)U\dot{x}(s)\,ds, \tag{5}
++ (h-\tau(t))\int_{t-\tau(t)}^t e^{2\alpha(s-t)}\dot{x}^T(s)U\dot{x}(s)\,ds, \qquad \text{(5)}
 ```
 
 ```math
@@ -67,13 +67,13 @@ V_X
 \frac{X+X^T}{2} & -X+X_1 \\
 * & -X_1-X_1^T+\frac{X+X^T}{2}
 \end{pmatrix}
-\xi(t), \tag{6}
+\xi(t), \qquad \text{(6)}
 ```
 
 以及
 
 ```math
-\xi^T(t)=\begin{bmatrix}x^T(t) & x^T(t-\tau(t))\end{bmatrix}. \tag{7}
+\xi^T(t)=\begin{bmatrix}x^T(t) & x^T(t-\tau(t))\end{bmatrix}. \qquad \text{(7)}
 ```
 
 对式 (4) 求导，可得到
@@ -81,7 +81,7 @@ V_X
 ```math
 \dot V\left(t,x_t,\dot{x}_t\right)
 =
-\dot V_S\left(t,x_t,\dot{x}_t\right)+\dot V_X\left(t,x_t\right). \tag{8}
+\dot V_S\left(t,x_t,\dot{x}_t\right)+\dot V_X\left(t,x_t\right). \qquad \text{(8)}
 ```
 
 再将积分项导数通过莱布尼茨积分法则展开，并整理成关于当前状态、延迟状态、导数项以及辅助变量的二次型表达。
@@ -99,7 +99,7 @@ v_1=\frac{1}{\tau(t)}\int_{t-\tau(t)}^t \dot{x}(s)\,ds,
 ```math
 \int_{t-\tau(t)}^t \dot{x}^T(s)U\dot{x}(s)\,ds
 \ge
-\tau(t)v_1^TUv_1. \tag{10}
+\tau(t)v_1^TUv_1. \qquad \text{(10)}
 ```
 
 再由系统方程与微积分基本定理，可构造两个恒等式约束：
@@ -107,11 +107,11 @@ v_1=\frac{1}{\tau(t)}\int_{t-\tau(t)}^t \dot{x}(s)\,ds,
 ```math
 0=
 2\left(x^T(t)P_2^T+\dot{x}^T(t)P_3^T\right)
-\left(Ax(t)+BKx(t-\tau(t))-\dot{x}(t)\right), \tag{11}
+\left(Ax(t)+BKx(t-\tau(t))-\dot{x}(t)\right), \qquad \text{(11)}
 ```
 
 ```math
-\int_{t-\tau(t)}^t \dot{x}(s)\,ds=x(t)-x(t-\tau(t)). \tag{12}
+\int_{t-\tau(t)}^t \dot{x}(s)\,ds=x(t)-x(t-\tau(t)). \qquad \text{(12)}
 ```
 
 进一步引入自由权矩阵后，可将
@@ -133,13 +133,13 @@ x^T(t) & \dot{x}^T(t) & x^T(t-\tau(t)) & v_1^T
 ```math
 \dot V\left(t,x_t,\dot{x}_t\right)+2\alpha V\left(t,x_t,\dot{x}_t\right)
 \le
-\eta^T(t)\Psi_S\eta(t). \tag{14}
+\eta^T(t)\Psi_S\eta(t). \qquad \text{(14)}
 ```
 
 若 $\Psi_S \prec 0$，则有
 
 ```math
-\dot V\left(t,x_t,\dot{x}_t\right)+2\alpha V\left(t,x_t,\dot{x}_t\right)<0. \tag{16}
+\dot V\left(t,x_t,\dot{x}_t\right)+2\alpha V\left(t,x_t,\dot{x}_t\right)<0. \qquad \text{(16)}
 ```
 
 ### 3. 指数稳定性引理
@@ -153,7 +153,7 @@ V:\mathbb{R}\times W \times L_2[-h,0]\to\mathbb{R},
 使得
 
 ```math
-\beta |\phi(0)|^2 \le V(t,\phi,\dot\phi)\le \delta |\phi|_W^2, \tag{17}
+\beta |\phi(0)|^2 \le V(t,\phi,\dot\phi)\le \delta |\phi|_W^2, \qquad \text{(17)}
 ```
 
 并且沿系统轨迹满足
@@ -178,7 +178,7 @@ V\left(t,x_t,\dot{x}_t\right)
 =
 x^T(t)Px(t)
 + (h-\tau(t))\int_{t-\tau(t)}^t e^{2\alpha(s-t)}\dot{x}^T(s)U\dot{x}(s)\,ds
-+ (h-\tau(t))\xi^T(t)\Xi\xi(t), \tag{19}
++ (h-\tau(t))\xi^T(t)\Xi\xi(t), \qquad \text{(19)}
 ```
 
 其中
@@ -196,7 +196,7 @@ x^T(t)Px(t)
 ```math
 V\left(t,x_t,\dot{x}_t\right)
 \ge
-x^T(t)Px(t)+(h-\tau(t))\xi^T(t)\Xi\xi(t). \tag{20}
+x^T(t)Px(t)+(h-\tau(t))\xi^T(t)\Xi\xi(t). \qquad \text{(20)}
 ```
 
 进一步定义
@@ -206,7 +206,7 @@ x^T(t)Px(t)+(h-\tau(t))\xi^T(t)\Xi\xi(t). \tag{20}
 \begin{bmatrix}
 P+h\frac{X+X^T}{2} & hX_1-hX \\
 * & -hX_1-hX_1^T+h\frac{X+X^T}{2}
-\end{bmatrix}. \tag{21}
+\end{bmatrix}. \qquad \text{(21)}
 ```
 
 若存在 $\beta>0$ 使得
@@ -223,13 +223,13 @@ P & 0 \\
 \begin{bmatrix}
 \beta I_n & 0 \\
 0 & 0
-\end{bmatrix}, \tag{23}
+\end{bmatrix}, \qquad \text{(23)}
 ```
 
 则可推出
 
 ```math
-\beta |\phi(0)|^2 \le \bar V(t). \tag{25}
+\beta |\phi(0)|^2 \le \bar V(t). \qquad \text{(25)}
 ```
 
 ### 5. 结论
@@ -251,7 +251,7 @@ P & 0 \\
 ```math
 F(\tau)\prec 0,\ \forall \tau\in[0,h]
 \Longleftrightarrow
-F(0)\prec 0 \text{ 且 } F(h)\prec 0. \tag{35}
+F(0)\prec 0 \text{ 且 } F(h)\prec 0. \qquad \text{(35)}
 ```
 
 这意味着只需分别在端点 $\tau=0$ 和 $\tau=h$ 检查 LMI，即可推出区间内全局成立。
@@ -273,7 +273,7 @@ F(0)\prec 0 \text{ 且 } F(h)\prec 0. \tag{35}
 因此，令
 
 ```math
-P_2=\gamma_2 I, \qquad P_3=\gamma_3 I, \tag{43}
+P_2=\gamma_2 I, \qquad P_3=\gamma_3 I, \qquad \text{(43)}
 ```
 
 则有
@@ -281,7 +281,7 @@ P_2=\gamma_2 I, \qquad P_3=\gamma_3 I, \tag{43}
 ```math
 \Phi_{13}=\gamma_2 BK+Y_1^T-T,
 \qquad
-\Phi_{23}=\gamma_3 BK+Y_2^T. \tag{44}
+\Phi_{23}=\gamma_3 BK+Y_2^T. \qquad \text{(44)}
 ```
 
 这样可以减小变量耦合难度，便于用 LMI 工具直接求解。
@@ -307,7 +307,7 @@ K=
 \begin{bmatrix}
 -0.3399 & -0.0263 \\
 -0.0628 & -1.2527
-\end{bmatrix}. \tag{45}
+\end{bmatrix}. \qquad \text{(45)}
 ```
 
 ## 数值结果

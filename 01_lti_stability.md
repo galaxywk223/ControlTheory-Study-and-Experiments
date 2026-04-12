@@ -159,7 +159,7 @@ A^T P + P A \prec 0.
 构造李雅普诺夫函数
 
 ```math
-V(t)=x^T(t)Px(t). \tag{1}
+V(t)=x^T(t)Px(t). \qquad \text{(1)}
 ```
 
 由于 $P\succ 0$，所以 $V(t)>0$。
@@ -167,19 +167,19 @@ V(t)=x^T(t)Px(t). \tag{1}
 对式 (1) 求导可得
 
 ```math
-\dot V(t)=x^T(t)(A^TP+PA)x(t). \tag{2}
+\dot V(t)=x^T(t)(A^TP+PA)x(t). \qquad \text{(2)}
 ```
 
 再利用牛顿-莱布尼兹公式，可得到
 
 ```math
-e^{kt}V(t)=V(0)+\int_0^t e^{k\theta}\big[kV(\theta)+\dot V(\theta)\big]\,d\theta. \tag{3}
+e^{kt}V(t)=V(0)+\int_0^t e^{k\theta}\big[kV(\theta)+\dot V(\theta)\big]\,d\theta. \qquad \text{(3)}
 ```
 
 另一方面，由矩阵 $P$ 的特征值性质可得
 
 ```math
-\lambda_{\min}(P)\|x(t)\|^2 \le V(t) \le \lambda_{\max}(P)\|x(t)\|^2. \tag{4}
+\lambda_{\min}(P)\|x(t)\|^2 \le V(t) \le \lambda_{\max}(P)\|x(t)\|^2. \qquad \text{(4)}
 ```
 
 将 (3) 与 (4) 联立，并选择足够小的 $k>0$，使得相关积分项系数为负，就能推出

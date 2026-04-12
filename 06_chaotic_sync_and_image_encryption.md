@@ -14,7 +14,7 @@
 考虑如下混沌时滞神经网络：
 
 ```math
-\dot {x} (t) = A x (t) + B f (x (t)) + \bar {B} g (x (t - \tau)) + J. \tag{1}
+\dot {x} (t) = A x (t) + B f (x (t)) + \bar {B} g (x (t - \tau)) + J. \qquad \text{(1)}
 ```
 
 其中：
@@ -43,7 +43,7 @@
 将式 (1) 视为驱动系统，对应的响应系统取为
 
 ```math
-\dot {\hat {x}} (t) = A \hat {x} (t) + B f (\hat {x} (t)) + \bar{B} g (\hat {x} (t - \tau)) + u(t) + J. \tag{2}
+\dot {\hat {x}} (t) = A \hat {x} (t) + B f (\hat {x} (t)) + \bar{B} g (\hat {x} (t - \tau)) + u(t) + J. \qquad \text{(2)}
 ```
 
 定义同步误差
@@ -55,7 +55,7 @@ e(t) = \hat{x}(t) - x(t),
 可得误差系统
 
 ```math
-\dot {e} (t) = A e (t) + B \left(f (\hat {x} (t)) - f (x (t))\right) + \bar {B} \left(g (\hat {x} (t - \tau)) - g (x (t - \tau))\right) + u (t). \tag{3}
+\dot {e} (t) = A e (t) + B \left(f (\hat {x} (t)) - f (x (t))\right) + \bar {B} \left(g (\hat {x} (t - \tau)) - g (x (t - \tau))\right) + u (t). \qquad \text{(3)}
 ```
 
 ### 名词说明
@@ -69,7 +69,7 @@ e(t) = \hat{x}(t) - x(t),
 设计如下形式的状态反馈控制器
 
 ```math
-u(t) = K e(t), \tag{4}
+u(t) = K e(t), \qquad \text{(4)}
 ```
 
 使得误差系统渐近稳定，即同步误差趋于零。

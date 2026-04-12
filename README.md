@@ -6,12 +6,12 @@
 
 建议按以下顺序阅读：
 
-1. [线性时不变系统稳定性笔记](./01_lti_stability.md)
-2. [线性时不变系统控制笔记](./02_lti_control.md)
-3. [线性时不变系统周期采样控制与稳定性分析笔记](./03_periodic_sampling_control.md)
-4. [鲁棒控制笔记](./04_robust_control.md)
-5. [非线性时滞神经网络稳定性笔记](./05_delay_neural_network_stability.md)
-6. [混沌时滞神经网络同步与图像加密笔记](./06_chaotic_sync_and_image_encryption.md)
+1. [线性时不变系统稳定性笔记](./01_线性时不变系统稳定性.md)
+2. [线性时不变系统控制笔记](./02_线性时不变系统控制.md)
+3. [线性时不变系统周期采样控制与稳定性分析笔记](./03_线性时不变系统周期采样控制与稳定性分析.md)
+4. [鲁棒控制笔记](./04_鲁棒控制.md)
+5. [非线性时滞神经网络稳定性笔记](./05_非线性时滞神经网络稳定性.md)
+6. [混沌时滞神经网络同步与图像加密笔记](./06_混沌时滞神经网络同步与图像加密.md)
 
 ## 公开内容
 
@@ -131,12 +131,12 @@ ModernControlTheory/
 │     ├─ generate_results.m
 │     └─ generate_results.py
 ├─ generated/                  # 运行脚本后自动生成，默认不纳入版本控制
-├─ 01_lti_stability.md
-├─ 02_lti_control.md
-├─ 03_periodic_sampling_control.md
-├─ 04_robust_control.md
-├─ 05_delay_neural_network_stability.md
-├─ 06_chaotic_sync_and_image_encryption.md
+├─ 01_线性时不变系统稳定性.md
+├─ 02_线性时不变系统控制.md
+├─ 03_线性时不变系统周期采样控制与稳定性分析.md
+├─ 04_鲁棒控制.md
+├─ 05_非线性时滞神经网络稳定性.md
+├─ 06_混沌时滞神经网络同步与图像加密.md
 ├─ README.md
 └─ .gitignore
 ```

@@ -1,6 +1,6 @@
-# 控制理论学习与实验
+# 现代控制理论学习与实验
 
-仓库整理了现代控制理论方向的一条中文主干学习线及配套数值实验。主阅读层位于 `notes/`，可复现实验位于 `experiments/`，同一主题下尽量同时保留 Python 和 MATLAB 版本，用于关联理论推导、状态空间模型和结果图像。
+仓库整理了现代控制理论方向的一条中文主干学习线及配套数值实验，聚焦状态空间方法下的建模、稳定性分析、控制器设计、状态估计与鲁棒性问题，不以控制理论全景覆盖为目标。主阅读层位于 `notes/`，可复现实验位于 `experiments/`，同一主题下尽量同时保留 Python 和 MATLAB 版本，用于关联理论推导、状态空间模型和结果图像。
 
 ## 仓库导航
 
@@ -90,7 +90,7 @@ matlab -batch "run('experiments/nonlinear_and_delay/11_chaotic_sync_and_image_en
 ## 仓库结构
 
 ```text
-ControlTheory-Study-and-Experiments/
+ModernControlTheory-Study-and-Experiments/
 ├─ notes/
 │  ├─ README.md
 │  ├─ 01_系统建模与状态空间基础.md
